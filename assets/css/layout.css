@@ -1,0 +1,211 @@
+/* Base layout styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+/* No Products Message */
+.no-products-message {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.no-products-message h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.no-products-message p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.no-products-message .btn {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+}
+
+/* Layout styles for displays over 1024px */
+@media (min-width: 1024px) {
+    .product-layout {
+        display: flex;
+        gap: 2rem;
+        padding: 2rem;
+        min-height: calc(100vh - 200px);
+    }
+
+    .filter-sidebar {
+        width: 250px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+    }
+
+    .product-grid-container {
+        flex-grow: 1;
+        position: relative;
+    }
+
+    .sort-controls {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+    }
+
+    /* Center no-products message within product grid */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        min-height: 400px;
+    }
+
+    .product-grid .no-products-message {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem auto;
+        max-width: 600px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .filter-section {
+        margin-bottom: 1.5rem;
+        margin-top: 3.6rem;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 1rem;  
+    }
+
+    .filter-section h5 {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .filter-options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .filter-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    .filter-options a{
+        text-decoration: none;
+        color: #333;
+    }
+
+    .filter-option:hover {
+        background-color: #f8f9fa;
+    }
+
+    .filter-option.active {
+        background-color: #e9ecef;
+    }
+
+    /* Hide mobile controls on large screens */
+    .mobile-filter-controls {
+        display: none;
+    }
+}
+
+/* Styles for small devices (below 1024px) */
+@media (max-width: 1023px) {
+    .sort-controls{
+        display: none;
+    }
+    .product-layout {
+        padding: 1rem;
+        min-height: calc(100vh - 200px); /* Adjust based on header and footer height */
+    }
+
+    /* Hide desktop filter sidebar */
+    .filter-sidebar {
+        display: none;
+    }
+
+    /* Show mobile filter controls */
+    .mobile-filter-controls {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .mobile-filter-dropdown {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .mobile-sort-dropdown {
+        width: 100%;
+    }
+
+    .product-grid-container {
+        width: 100%;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    /* Mobile filter modal styles */
+    .filter-modal .modal-body {
+        padding: 1rem;
+    }
+
+    .filter-modal .filter-options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .filter-modal .filter-options a{
+        text-decoration: none;
+        color: #333;
+    }
+
+    .filter-modal .filter-option {
+        padding: 0.75rem;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+    }
+
+    .filter-modal .filter-option.active {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+    }
+} 
