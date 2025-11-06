@@ -51,4 +51,5 @@ glamour-shop/
 
 - CSRF protection on forms
 
-view project demo here Glamour-shop.netlify.app
+view project demo here https://Glamour-shop.netlify.app/
+
