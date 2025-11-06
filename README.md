@@ -48,4 +48,7 @@ glamour-shop/
 - All passwords are hashed using PHP's password_hash()
 - SQL injection prevention using prepared statements
 - XSS protection through proper escaping
-- CSRF protection on forms 
+
+- CSRF protection on forms
+
+view project demo here Glamour-shop.netlify.app
